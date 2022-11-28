@@ -13,6 +13,8 @@ app.use(cors())
 
 
 // Connectiong database
+// # DB_CONNECT=mongodb://127.0.0.1:27017/CodingProfileManager
+mongoose.Promise = global.Promise;
 mongoose.connect(process.env.DB_CONNECT,{useNewUrlParser:true, useUnifiedTopology:true})
 .then(()=>{
     console.log('Database connected ,lets work!');
