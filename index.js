@@ -2,6 +2,7 @@ const express =require('express');
 const dotenv=require('dotenv');
 const mongoose =require('mongoose')
 const cors=require("cors")
+const PORT =process.env.PORT || 3000
 
 
 dotenv.config();
@@ -35,6 +36,8 @@ const StidentProfileRoutes=require('./routes/studentprofileroute')
 const TmakelistRoutes=require('./routes/TmakelistRoute')
 const TsorlistRoutes=require('./routes/Tsortlistroute')
 
+const feedbackRoutes=require('./routes/feedbackRoute')
+
 app.use("/api",loginRoutes)
 app.use("/api/teacher_login",TloginRoutes)
 
@@ -44,6 +47,7 @@ app.use("/api/student/profile",StidentProfileRoutes)
 
 app.use('/api/teacher/list/',TmakelistRoutes)
 app.use('/api/teacher/sortlist/',TsorlistRoutes)
+app.use('/api/feedback',feedbackRoutes);
 
 
 
@@ -52,6 +56,6 @@ app.use('/api/teacher/sortlist/',TsorlistRoutes)
 
 
 // listen the server at port
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
  console.log("Server is live on 3000");
 })
