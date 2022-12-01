@@ -1,10 +1,10 @@
 const { default: axios } = require("axios");
 
 // user login
-const codechefdata =async (req,res)=>{
-          console.log(req.params.username)
-        await axios.get('https://competeapi.vercel.app/user/codechef/'+req.params.username)
+const contestdata =async (req,res)=>{
+        await axios.get('https://competeapi.vercel.app/contests/upcoming')
        .then((response)=>{
+        console.log(response.data);
         res.status(200).json(response.data);
        })
         
@@ -19,6 +19,6 @@ const codechefdata =async (req,res)=>{
 // export 
 
 module.exports={
-    codechefdata
+    contestdata
    
 }

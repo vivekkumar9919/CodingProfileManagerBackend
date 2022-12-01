@@ -39,6 +39,8 @@ const TsorlistRoutes=require('./routes/Tsortlistroute')
 const feedbackRoutes=require('./routes/feedbackRoute')
 
 const codechefRoutes =require('./routes/codechefAPI')
+const leetcodeRoutes=require('./routes/leetcodeAPI')
+const contestRoutes =require('./routes/AllContestAPI')
 
 app.use("/api",loginRoutes)
 app.use("/api/teacher_login",TloginRoutes)
@@ -53,6 +55,8 @@ app.use('/api/teacher/sortlist/',TsorlistRoutes)
 app.use('/api/feedback',feedbackRoutes);
 
 app.use('/api/codechef',codechefRoutes)
+app.use('/api/leetcode/',leetcodeRoutes)
+app.use('/api/contest/',contestRoutes)
 
 
 
