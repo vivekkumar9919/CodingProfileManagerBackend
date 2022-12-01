@@ -1,17 +1,30 @@
-const { default: axios } = require("axios");
+const fetch =  (...args) =>
+import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 // user login
 const contestdata =async (req,res)=>{
-        await axios.get('https://competeapi.vercel.app/contests/upcoming')
-       .then((response)=>{
-        console.log(response.data);
-        res.status(200).json(response.data);
-       })
+     
+    // try {
+    //     const res = await fetch('https://competeapi.vercel.app/contests/upcoming');
+    //     const data = await res.json();
+    //     console.log(data);
+    //     res.status(200).json(data)
+    // }
         
-    .catch((err)=>{
+    // catch(err){
+    //     res.status(400).json({"error_occured":err})
+    // }   
+    
+     await fetch('https://competeapi.vercel.app/contests/upcoming')
+     .then(async (response)=>{
+        const data = await response.json();
+        console.log(data);
+        res.status(200).json(data)
+     })
+     .catch((err)=>{
         res.status(400).json({"error_occured":err})
-    })
-       
+     })
+    
     
 }
 
@@ -22,3 +35,16 @@ module.exports={
     contestdata
    
 }
+
+// const fetch =  (...args) =>
+// import('node-fetch').then(({ default: fetch }) => fetch(...args));
+
+
+// async function fun() {
+
+//     const res = await fetch('https://competeapi.vercel.app/contests/upcoming');
+//     const data = await res.json();
+//     console.log(data);
+// }
+
+// fun();
