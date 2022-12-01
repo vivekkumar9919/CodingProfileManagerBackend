@@ -40,7 +40,7 @@ const feedbackRoutes=require('./routes/feedbackRoute')
 
 const codechefRoutes =require('./routes/codechefAPI')
 const leetcodeRoutes=require('./routes/leetcodeAPI')
-const codeforcesRoutes=require('./routes/codeforcesAPI')
+const codeforcesRoutes=require('./routes/codeforceAPI')
 const contestRoutes =require('./routes/AllContestAPI')
 
 app.use("/api",loginRoutes)
