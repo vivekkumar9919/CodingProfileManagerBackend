@@ -38,6 +38,8 @@ const TsorlistRoutes=require('./routes/Tsortlistroute')
 
 const feedbackRoutes=require('./routes/feedbackRoute')
 
+const codechefRoutes =require('./routes/codechefAPI')
+
 app.use("/api",loginRoutes)
 app.use("/api/teacher_login",TloginRoutes)
 
@@ -47,7 +49,10 @@ app.use("/api/student/profile",StidentProfileRoutes)
 
 app.use('/api/teacher/list/',TmakelistRoutes)
 app.use('/api/teacher/sortlist/',TsorlistRoutes)
+
 app.use('/api/feedback',feedbackRoutes);
+
+app.use('/api/codechef',codechefRoutes)
 
 
 
